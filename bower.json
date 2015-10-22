@@ -1,0 +1,12 @@
+{
+  "name": "bestbuy",
+  "homepage": "https://github.com/JayHuang/BBYC",
+  "authors": [
+    "Jay Huang"
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "mustache.js": "mustache#~2.2.0"
+  }
+}
