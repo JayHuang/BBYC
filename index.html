@@ -3,14 +3,25 @@
 <head>
 	<title>BestBuy Products</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="js/lib/jquery-modal/jquery.modal.css">
 </head>
 <body>
 	<div class="container">
-		<navigation class="categories"></navigation>
+		<navigation class="categories">dc</navigation>
+		<div id="content"></div>
 	</div>
+	<script type="text/javascript" src="js/lib/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="js/lib/mustache.js/mustache.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-modal/jquery.modal.js"></script>
 	<script type="text/javascript" src="js/config.js"></script>
 	<script type="text/javascript" src="js/jsonp.js"></script>
 	<script type="text/javascript" src="js/api.js"></script>
+	<script type="text/javascript" src="js/store.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			Store.initialize();
+		});
+	</script>
+
 </body>
 </html>
