@@ -8,7 +8,6 @@
   "private": true,
   "devDependencies": {
     "mustache.js": "mustache#~2.2.0",
-    "jquery": "~2.1.4",
-    "jquery-modal": "~0.5.10"
-  }
+    "jquery": "~2.1.4"
+    }
 }

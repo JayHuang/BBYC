@@ -3,16 +3,16 @@
 <head>
 	<title>BestBuy Products</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="js/lib/jquery-modal/jquery.modal.css">
+	<link rel="stylesheet" type="text/css" href="css/jsmodal-dark.css">
 </head>
 <body>
 	<div class="container">
-		<navigation class="categories">dc</navigation>
+		<navigation class="categories"></navigation>
 		<div id="content"></div>
 	</div>
 	<script type="text/javascript" src="js/lib/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="js/lib/mustache.js/mustache.min.js"></script>
-	<script type="text/javascript" src="js/lib/jquery-modal/jquery.modal.js"></script>
+	<script type="text/javascript" src="js/jsmodal-1.0d.min.js"></script>
 	<script type="text/javascript" src="js/config.js"></script>
 	<script type="text/javascript" src="js/jsonp.js"></script>
 	<script type="text/javascript" src="js/api.js"></script>
@@ -21,6 +21,19 @@
 		$(function() {
 			Store.initialize();
 		});
+	</script>
+	<script id="productDetails" type="text/html">
+		<div>
+			<div>
+				<h2>{{name}}</h2>
+				<div>
+					<a href="{{productUrl}}" target="_blank" title="{{name}}">
+						<img src="{{domain}}{{thumbnailImage}}"/>
+					</a>
+				</div>
+				<div>{{shortDescription}}</div>
+			</div>
+		</div>
 	</script>
 
 </body>

@@ -1,10 +1,11 @@
 html, body {
 	font-family: Tahoma, Georgia, Arial;
 	font-size: 13px;
+	margin-top: 5px;
 }
 
 .container {
-	width: 900px;
+	width: 980px;
 	margin: 0 auto;
 }
 
@@ -30,16 +31,31 @@ navigation.categories li:hover {
 
 #content {
 	float: right;
-	width: 650px;
+	width: 730px;
 }
 
 #content ul {
 	list-style: none;
-	margin: 0;
-	padding: 0;
 	-webkit-column-count:4;
 	-moz-column-count:4;
 	-ms-column-count:4;
 	-o-column-count:4;
 	column-count:4;
+}
+
+#content ul li {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#content ul li img {
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+#content ul li:hover {
+	font-weight: bold;
+	color: green;
+	cursor: pointer;
 }

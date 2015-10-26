@@ -48,12 +48,29 @@ API = (function(CONFIG, JSONP) {
 		}
 	}
 
+	// Looks in cache for existing product details, otherwise query BestBuy API
+	api.getProductDetails = function(productId, successCallback) {
+		if(_product[productId]) {
+			if(typeof(successCallback) === 'function') {
+				successCallback(_product[productId]);
+			}
+		} else {
+			JSONP.get(apiUrl + 'product/' + productId, _params, function(data) {
+				_product[productId] = data;
+				if(typeof(successCallback) === 'function') {
+					successCallback(_product[productId]);
+				}
+			});
+		}
+	}
+
 	api.testRequests = function() {
 		var callback = function(data) {
 			console.log(data);
 		}
 		api.getProducts(null, callback);
 		api.getCategories(callback);
+		api.getProductDetails(10392133, callback);
 	}
 
 	return api;

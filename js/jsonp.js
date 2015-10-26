@@ -11,7 +11,7 @@ JSONP = (function(document){
             data = {};
         }
 		
-        src += (src.indexOf('?') + 1 ? '&' : '?');
+        src += (src.indexOf('?')+1 ? '&' : '?');
 
         var script = document.createElement('script'),
             params = [],

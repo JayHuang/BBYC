@@ -13,7 +13,9 @@ Store = (function() {
 	}
 
 	function listProductsCallback(products) {
-		$content.innerHTML = Mustache.render('<ul>{{#.}} <li class="item" data-id="{{sku}}"><div class="product-image"><img src="' + CONFIG.domain + '{{thumbnailImage}}" title="{{name}}/></div><div class="price">${{regularPrice}}</div><div class="discount">Discount</div></li>{{/.}}</ul>', products);
+		$content.innerHTML = Mustache.render('<ul>{{#.}} <li class="item" data-id="{{sku}}"><div class="product-image"><img src="' + CONFIG.domain + '{{thumbnailImage}}" title="{{name}}"/></div><div class="price">${{regularPrice}}</div></li>{{/.}}</ul>', products);
+
+		$('.item').on('click', showProductDetails);
 	}
 
 	function listCategoriesCallback(categories) {
@@ -27,6 +29,19 @@ Store = (function() {
 		API.getProducts(categoryId, listProductsCallback);
 	}
 
+	function showProductDetails() {
+		var sku = $(this).attr('data-id');
+		console.log(sku);
+
+		API.getProductDetails(sku, function(details) {
+			details.domain = CONFIG.domain;
+			console.log(details);
+			window.a = details;
+			var $productDetails = $('#productDetails')[0];
+			var renderedTemplate = Mustache.render($productDetails.innerHTML, details);
+			Modal.open({content: renderedTemplate, width: '500px'});
+		});
+	}
 
 	return this;
 })();
